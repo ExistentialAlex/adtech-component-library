@@ -12,6 +12,6 @@ defineProps<Props>();
 
 <style scoped>
 .my-class {
-  color: #fff;
+  color: red;
 }
 </style>
