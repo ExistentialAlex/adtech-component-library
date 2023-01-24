@@ -1,7 +1,21 @@
-import { describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
+import { mount, VueWrapper } from '@vue/test-utils';
+import ComponentTemplate from '../../../src/components/component-template/component-template.vue';
 
 describe('ComponentTemplate', () => {
-  it('Should run a test', () => {
-    expect(1).toBe(1);
+  let wrapper: VueWrapper;
+
+  beforeEach(() => {
+    wrapper = mount(ComponentTemplate, {
+      props: {
+        // My props here
+        myprop: 'My test!',
+      },
+    });
+  });
+
+  it('Should be defined', () => {
+    expect(wrapper).toBeDefined();
+    expect(wrapper.text()).toContain('My test!');
   });
 });
