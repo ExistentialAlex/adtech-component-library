@@ -6,8 +6,12 @@ defineProps<{ msg: string }>();
   <h1>{{ msg }}</h1>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .read-the-docs {
   color: #888;
+
+  &_these_docs {
+    color: #555;
+  }
 }
 </style>
