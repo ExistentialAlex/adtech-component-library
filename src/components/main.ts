@@ -1,4 +1,5 @@
 import type { App } from 'vue';
+import styles from '../style.scss';
 import { HelloWorld } from '.';
 
 export default {
@@ -7,4 +8,4 @@ export default {
   },
 };
 
-export { HelloWorld };
+export { HelloWorld, styles };
