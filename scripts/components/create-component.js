@@ -45,12 +45,15 @@ writeFileSync(
   vueTemplateContents
 );
 writeFileSync(
-  `${__dirname}/../../src/components/${kebabComponentName}/${kebabComponentName}.storiesS.js`,
+  `${__dirname}/../../src/components/${kebabComponentName}/${kebabComponentName}.stories.js`,
   componentStoryContents
 );
 
 console.log('2. Creating test file');
-// TODO - Add creation of test file
+const testFileContent = readFileSync(`${__dirname}/templates/${componentTemplateFileName}.spec.ts`).toString();
+const updatedTestContent = testFileContent.replaceAll(componentTemplateImportName, pascalComponentName).replaceAll(componentTemplateFileName, kebabComponentName);
+mkdirSync(`${__dirname}/../../test/components/${kebabComponentName}`);
+writeFileSync(`${__dirname}/../../test/components/${kebabComponentName}/${kebabComponentName}.spec.ts`, updatedTestContent);
 
 console.log('3. Updating Index');
 const indexFile = readFileSync(componentIndexPath).toString();
