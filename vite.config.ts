@@ -12,14 +12,14 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: `./src/components/main.ts`,
+      entry: `./src/main.ts`,
       name: 'adtech_component_library',
       formats: ['es', 'cjs', 'umd'],
       fileName: (format) => `adtech-component-library.${format}.js`,
     },
     rollupOptions: {
       input: {
-        main: './src/components/main.ts',
+        main: './src/main.ts',
       },
       external: ['vue'],
       output: {

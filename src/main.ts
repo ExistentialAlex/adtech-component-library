@@ -1,5 +1,11 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import type { App } from 'vue';
+import styles from './style.scss';
+import { HelloWorld } from './components';
 
-createApp(App).mount('#app')
+export default {
+  install: (app: App) => {
+    app.component('HelloWorld', HelloWorld);
+  },
+};
+
+export { HelloWorld, styles };
