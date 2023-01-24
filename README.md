@@ -3,9 +3,11 @@
 This library contains a collection of vue components for use in Sky AdTech applications. The library is built and tested using typescript and has 100% coverage.
 
 ## Installing
-To use the components in your vue project, simply run: `npm install @existentialalex/adtech-component-library@latest`
+To use the components in your vue project, simply run: 
+`npm install @existentialalex/adtech-component-library@latest`
 
-NOTE: You may need to add the registry flag if github is not your default npm registry. `npm install @existentialalex/adtech-component-library@latest --registry=npm.pkg.github.com`
+NOTE: You may need to add the registry flag if github is not your default npm registry.
+`npm install @existentialalex/adtech-component-library@latest --registry=npm.pkg.github.com`
 
 ## Creating Components
 We have created a script that will generate a generic Vue component, along with a storybook stories file and test file.
