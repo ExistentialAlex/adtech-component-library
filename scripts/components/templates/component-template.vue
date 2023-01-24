@@ -10,7 +10,7 @@ defineProps<Props>();
   <h1 class="my-class">{{ myprop }}</h1>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .my-class {
   color: red;
 }
