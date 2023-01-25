@@ -18,7 +18,9 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "test/**/*.spec.ts"
+    "test/**/*.spec.ts",
+    "scripts/**/*.ts",
+    "scripts/**/*.vue"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
