@@ -2,18 +2,24 @@ $primary: (
   'name': 'primary',
   'base': var(--primary),
   'hover': var(--primary-hover),
+  'active': var(--primary-active),
+  'focus': var(--primary-active),
   'text': var(--primary-text),
 );
 $secondary: (
   'name': 'secondary',
   'base': var(--secondary),
   'hover': var(--secondary-hover),
+  'active': var(--secondary-active),
+  'focus': var(--secondary-active),
   'text': var(--text-01),
 );
 $accent: (
   'name': 'accent',
   'base': var(--accent),
   'hover': var(--accent-hover),
+  'active': var(--secondary-active),
+  'focus': var(--secondary-active),
   'text': var(--accent-text),
 );
 
@@ -38,6 +44,8 @@ $numeric-colors: $positive, $negative;
 $error: (
   'name': 'error',
   'fill': var(--error-fill),
+  'fill-hover': var(--error-fill-hover),
+  'fill-text': var(--text-dark-01),
   'bg': var(--error-bg),
   'hover': var(--error-bg-hover),
   'text': var(--negative),
@@ -46,6 +54,8 @@ $error: (
 $success: (
   'name': 'success',
   'fill': var(--success-fill),
+  'fill-hover': var(--success-fill-hover),
+  'fill-text': var(--text-dark-01),
   'bg': var(--success-bg),
   'hover': var(--success-bg-hover),
   'text': var(--positive),
@@ -54,25 +64,31 @@ $success: (
 $warning: (
   'name': 'warning',
   'fill': var(--warning-fill),
+  'fill-hover': var(--warning-fill-hover),
+  'fill-text': var(--text-dark-01),
   'bg': var(--warning-bg),
   'hover': var(--warning-bg-hover),
-  'text': var(--text-dark-01),
+  'text': var(--text-01),
 );
 
 $info: (
   'name': 'info',
   'fill': var(--info-fill),
+  'fill-hover': var(--info-fill-hover),
+  'fill-text': var(--text-dark-01),
   'bg': var(--info-bg),
   'hover': var(--info-bg-hover),
-  'text': var(--text-dark-01),
+  'text': var(--text-01),
 );
 
 $neutral: (
   'name': 'neutral',
   'fill': var(--neutral-fill),
+  'fill-hover': var(--neutral-fill-hover),
+  'fill-text': var(--text-dark-01),
   'bg': var(--neutral-bg),
   'hover': var(--neutral-bg-hover),
-  'text': var(--text-dark-01),
+  'text': var(--text-01),
 );
 
 $status-colors: $error, $success, $warning, $info, $neutral;
