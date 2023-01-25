@@ -1,0 +1,78 @@
+$primary: (
+  'name': 'primary',
+  'base': var(--primary),
+  'hover': var(--primary-hover),
+  'text': var(--primary-text),
+);
+$secondary: (
+  'name': 'secondary',
+  'base': var(--secondary),
+  'hover': var(--secondary-hover),
+  'text': var(--text-01),
+);
+$accent: (
+  'name': 'accent',
+  'base': var(--accent),
+  'hover': var(--accent-hover),
+  'text': var(--accent-text),
+);
+
+$component-colors: $primary, $secondary, $accent;
+
+$positive: (
+  'name': 'positive',
+  'base': var(--positive),
+  'hover': var(--positive-hover),
+  'text': var(--primary-text),
+);
+
+$negative: (
+  'name': 'negative',
+  'base': var(--negative),
+  'hover': var(--negative-hover),
+  'text': var(--primary-text),
+);
+
+$numeric-colors: $positive, $negative;
+
+$error: (
+  'name': 'error',
+  'fill': var(--error-fill),
+  'bg': var(--error-bg),
+  'hover': var(--error-bg-hover),
+  'text': var(--negative),
+);
+
+$success: (
+  'name': 'success',
+  'fill': var(--success-fill),
+  'bg': var(--success-bg),
+  'hover': var(--success-bg-hover),
+  'text': var(--positive),
+);
+
+$warning: (
+  'name': 'warning',
+  'fill': var(--warning-fill),
+  'bg': var(--warning-bg),
+  'hover': var(--warning-bg-hover),
+  'text': var(--text-dark-01),
+);
+
+$info: (
+  'name': 'info',
+  'fill': var(--info-fill),
+  'bg': var(--info-bg),
+  'hover': var(--info-bg-hover),
+  'text': var(--text-dark-01),
+);
+
+$neutral: (
+  'name': 'neutral',
+  'fill': var(--neutral-fill),
+  'bg': var(--neutral-bg),
+  'hover': var(--neutral-bg-hover),
+  'text': var(--text-dark-01),
+);
+
+$status-colors: $error, $success, $warning, $info, $neutral;
