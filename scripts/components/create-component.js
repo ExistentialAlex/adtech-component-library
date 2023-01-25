@@ -29,7 +29,7 @@ const vueTemplateContents = readFileSync(
   `${__dirname}/templates/${componentTemplateFileName}.vue`
 ).toString();
 const storyTemplateContents = readFileSync(
-  `${__dirname}/templates/${componentTemplateFileName}.stories.js`
+  `${__dirname}/templates/${componentTemplateFileName}.stories.ts`
 ).toString();
 
 console.log(
@@ -45,7 +45,7 @@ writeFileSync(
   vueTemplateContents
 );
 writeFileSync(
-  `${__dirname}/../../src/components/${kebabComponentName}/${kebabComponentName}.stories.js`,
+  `${__dirname}/../../src/components/${kebabComponentName}/${kebabComponentName}.stories.ts`,
   componentStoryContents
 );
 
