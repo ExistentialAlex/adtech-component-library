@@ -1,4 +1,5 @@
 import ComponentTemplate from './component-template.vue';
+import type { Meta, StoryFn } from '@storybook/vue3';
 
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
@@ -6,10 +7,10 @@ export default {
   component: ComponentTemplate,
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
   argTypes: {},
-};
+} as Meta<typeof ComponentTemplate>;
 
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
-const Template = (args) => ({
+const Template: StoryFn<typeof ComponentTemplate> = (args) => ({
   // Components used in your story `template` are defined in the `components` object
   components: { ComponentTemplate },
   // The story's `args` need to be mapped into the template through the `setup()` method
