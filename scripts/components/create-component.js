@@ -6,7 +6,7 @@ import { regexLastIndexOf } from '../helpers/indexOf.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const componentIndexPath = `${__dirname}/../../src/components/index.ts`;
-const componentMainPath = `${__dirname}/../../src/components/main.ts`;
+const componentMainPath = `${__dirname}/../../src/main.ts`;
 
 console.log('=== Starting Component Generation ===');
 
