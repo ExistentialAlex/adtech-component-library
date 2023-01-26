@@ -36,6 +36,8 @@ const Template: StoryFn<typeof AdtButton> = (args) => ({
 export const Default = Template.bind({});
 Default.args = {
   color: 'primary',
+  rounded: false,
+  sharp: false,
 };
 
 const LeftTemplate = (args: any) => ({
@@ -50,6 +52,8 @@ const LeftTemplate = (args: any) => ({
 export const LeftSlot: StoryFn<typeof AdtButton> = LeftTemplate.bind({});
 LeftSlot.args = {
   color: 'primary',
+  rounded: false,
+  sharp: false,
 };
 
 const RightTemplate = (args: any) => ({
@@ -64,6 +68,8 @@ const RightTemplate = (args: any) => ({
 export const RightSlot: StoryFn<typeof AdtButton> = RightTemplate.bind({});
 RightSlot.args = {
   color: 'primary',
+  rounded: false,
+  sharp: false,
 };
 
 const BothTemplate = (args: any) => ({
@@ -78,4 +84,6 @@ const BothTemplate = (args: any) => ({
 export const BothSlots: StoryFn<typeof AdtButton> = BothTemplate.bind({});
 BothSlots.args = {
   color: 'primary',
+  rounded: false,
+  sharp: false,
 };

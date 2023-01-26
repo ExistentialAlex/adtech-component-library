@@ -7,6 +7,7 @@ import {
 } from '../../enums';
 import { AppearanceProps } from '../../interfaces';
 
+// Would like to use this to define props, but have to wait till vue 3.3
 interface Props extends AppearanceProps {}
 
 // Currently have to define imported props like this till vue 3.3
@@ -15,7 +16,7 @@ const props = defineProps({
 });
 
 const buttonClasses = computed(() => {
-  const classes: string[] = [];
+  const classes: string[] = ['adt-btn'];
   const btnClr =
     (props.color as AppearanceProps['color']) || AdTechComponentColors.primary;
 
@@ -39,7 +40,11 @@ const buttonClasses = computed(() => {
   }
 
   if (props.rounded) {
-    classes.push('btn-rounded');
+    classes.push('br-rounded');
+  }
+
+  if (props.sharp) {
+    classes.push('br-sharp');
   }
 
   return classes.join(' ');
@@ -47,7 +52,7 @@ const buttonClasses = computed(() => {
 </script>
 
 <template>
-  <button @click="$emit('click')" :class="`adt-btn ${buttonClasses}`">
+  <button @click="$emit('click')" :class="buttonClasses">
     <slot name="left"></slot><slot></slot><slot name="right"></slot>
   </button>
 </template>
