@@ -2,7 +2,6 @@
   "name": "@existentialalex/adtech-component-library",
   "private": false,
   "version": "0.0.1",
-  "type": "module",
   "repository": "https://github.com/ExistentialAlex/adtech-component-library.git",
   "scripts": {
     "dev": "vite",
@@ -12,7 +11,8 @@
     "build-storybook": "build-storybook",
     "create:component": "node ./scripts/components/create-component.js",
     "test": "vitest run --coverage --dom",
-    "test:watch": "vitest --coverage --dom"
+    "test:watch": "vitest --coverage --dom",
+    "lint": "eslint src --ext .ts,.vue"
   },
   "files": [
     "dist"
@@ -42,16 +42,25 @@
     "@storybook/builder-vite": "^0.3.0",
     "@storybook/testing-library": "^0.0.13",
     "@storybook/vue3": "^6.5.15",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitest/coverage-c8": "^0.28.1",
+    "@vue/eslint-config-typescript": "^11.0.2",
     "@vue/test-utils": "^2.2.7",
     "babel-loader": "^8.3.0",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.9.0",
     "happy-dom": "^8.1.5",
+    "prettier": "^2.8.3",
     "sass": "^1.57.1",
     "typescript": "^4.9.3",
     "vite": "^4.0.0",
     "vite-plugin-dts": "^1.7.1",
     "vitest": "^0.28.1",
+    "vue-eslint-parser": "^9.1.0",
     "vue-loader": "^16.8.3",
     "vue-tsc": "^1.0.11"
   },
