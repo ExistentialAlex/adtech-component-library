@@ -1,1 +1,1 @@
-export * from './color-props.interface';
+export * from './appearance-props.interface';
