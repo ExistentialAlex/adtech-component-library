@@ -1,0 +1,15 @@
+@mixin border-radius-default {
+  border-radius: var(--border-radius-s);
+}
+
+@mixin border-radius-rounded {
+  border-radius: var(--border-radius-m);
+}
+
+@mixin border-radius-sharp {
+  border-radius: 0;
+}
+
+@mixin border-radius-circle {
+  border-radius: 50%;
+}
