@@ -1,4 +1,5 @@
 @import './colors.scss';
+@import './mixins.scss';
 
 @each $color in $component-colors {
   .#{map-get($color, 'name')} {
@@ -77,5 +78,23 @@
         }
       }
     }
+  }
+}
+
+.br {
+  &-default {
+    @include border-radius-default;
+  }
+
+  &-rounded {
+    @include border-radius-rounded;
+  }
+
+  &-sharp {
+    @include border-radius-sharp;
+  }
+
+  &-circle {
+    @include border-radius-circle;
   }
 }
