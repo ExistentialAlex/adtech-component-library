@@ -1,13 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import {
-  AdTechComponentColors,
-  AdTechNumericColors,
-  AdTechStatusColors,
-} from '../../enums';
+import { AdTechComponentColors, AdTechNumericColors, AdTechStatusColors } from '../../enums';
 import { AppearanceProps } from '../../interfaces';
 
 // Would like to use this to define props, but have to wait till vue 3.3
+// eslint-disable-next-line @typescript-eslint/no-empty-interface, @typescript-eslint/no-unused-vars
 interface Props extends AppearanceProps {}
 
 // Currently have to define imported props like this till vue 3.3
@@ -17,8 +14,7 @@ const props = defineProps({
 
 const buttonClasses = computed(() => {
   const classes: string[] = ['adt-btn'];
-  const btnClr =
-    (props.color as AppearanceProps['color']) || AdTechComponentColors.primary;
+  const btnClr = (props.color as AppearanceProps['color']) || AdTechComponentColors.primary;
 
   switch (btnClr) {
     case AdTechComponentColors.primary:

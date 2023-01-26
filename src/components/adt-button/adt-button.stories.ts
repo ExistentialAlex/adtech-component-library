@@ -40,7 +40,7 @@ Default.args = {
   sharp: false,
 };
 
-const LeftTemplate = (args: any) => ({
+const LeftTemplate: StoryFn<typeof AdtButton> = (args) => ({
   components: { AdtButton },
   setup() {
     return { args };
@@ -49,14 +49,14 @@ const LeftTemplate = (args: any) => ({
     '<AdtButton v-bind="args"><template #left><div>I am left!</div></template>Click me!</AdtButton>',
 });
 
-export const LeftSlot: StoryFn<typeof AdtButton> = LeftTemplate.bind({});
+export const LeftSlot = LeftTemplate.bind({});
 LeftSlot.args = {
   color: 'primary',
   rounded: false,
   sharp: false,
 };
 
-const RightTemplate = (args: any) => ({
+const RightTemplate: StoryFn<typeof AdtButton> = (args) => ({
   components: { AdtButton },
   setup() {
     return { args };
@@ -65,14 +65,14 @@ const RightTemplate = (args: any) => ({
     '<AdtButton v-bind="args">Click me!<template #right><div>I am right!</div></template></AdtButton>',
 });
 
-export const RightSlot: StoryFn<typeof AdtButton> = RightTemplate.bind({});
+export const RightSlot = RightTemplate.bind({});
 RightSlot.args = {
   color: 'primary',
   rounded: false,
   sharp: false,
 };
 
-const BothTemplate = (args: any) => ({
+const BothTemplate: StoryFn<typeof AdtButton> = (args) => ({
   components: { AdtButton },
   setup() {
     return { args };
@@ -81,7 +81,7 @@ const BothTemplate = (args: any) => ({
     '<AdtButton v-bind="args"><template #left><div>I am left!</div></template>Click me!<template #right><div>I am right!</div></template></AdtButton>',
 });
 
-export const BothSlots: StoryFn<typeof AdtButton> = BothTemplate.bind({});
+export const BothSlots = BothTemplate.bind({});
 BothSlots.args = {
   color: 'primary',
   rounded: false,
