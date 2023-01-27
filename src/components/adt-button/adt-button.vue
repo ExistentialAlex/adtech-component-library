@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { AdTechComponentColors, AdTechNumericColors, AdTechStatusColors } from '../../enums';
 import { AppearanceProps } from '../../interfaces';
+import { getBrClasses, getColorBgClasses } from '../../utils';
 
 // Would like to use this to define props, but have to wait till vue 3.3
 // eslint-disable-next-line @typescript-eslint/no-empty-interface, @typescript-eslint/no-unused-vars
@@ -12,39 +12,13 @@ const props = defineProps({
   ...AppearanceProps,
 });
 
-const buttonClasses = computed(() => {
-  const classes: string[] = ['adt-btn'];
-  const btnClr = (props.color as AppearanceProps['color']) || AdTechComponentColors.primary;
-
-  switch (btnClr) {
-    case AdTechComponentColors.primary:
-    case AdTechComponentColors.secondary:
-    case AdTechComponentColors.accent:
-    case AdTechNumericColors.positive:
-    case AdTechNumericColors.negative: {
-      classes.push(...[`${btnClr}-bg`, `${btnClr}-bg-hover`]);
-      break;
-    }
-    case AdTechStatusColors.error:
-    case AdTechStatusColors.success:
-    case AdTechStatusColors.warning:
-    case AdTechStatusColors.info:
-    case AdTechStatusColors.neutral: {
-      classes.push(...[`${btnClr}-fill`, `${btnClr}-fill-hover`]);
-      break;
-    }
-  }
-
-  if (props.rounded) {
-    classes.push('br-rounded');
-  }
-
-  if (props.sharp) {
-    classes.push('br-sharp');
-  }
-
-  return classes.join(' ');
-});
+const buttonClasses = computed(() =>
+  [
+    'adt-btn',
+    ...getColorBgClasses(props.color as AppearanceProps['color'], true),
+    ...getBrClasses({ rounded: props.rounded, sharp: props.sharp }),
+  ].join(' ')
+);
 </script>
 
 <template>
