@@ -30,7 +30,8 @@ const Template: StoryFn<typeof AdtButton> = (args) => ({
     return { args };
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<AdtButton v-bind="args">Click me!</AdtButton>',
+  template:
+    '<AdtButton v-bind="args"><template #left><div v-if="args.leftContent" v-html="args.leftContent"></div></template>Click me!<template #right><div v-if="args.rightContent" v-html="args.rightContent"></div></template></AdtButton>',
 });
 
 export const Default = Template.bind({});
@@ -40,50 +41,11 @@ Default.args = {
   sharp: false,
 };
 
-const LeftTemplate: StoryFn<typeof AdtButton> = (args) => ({
-  components: { AdtButton },
-  setup() {
-    return { args };
-  },
-  template:
-    '<AdtButton v-bind="args"><template #left><div>I am left!</div></template>Click me!</AdtButton>',
-});
-
-export const LeftSlot = LeftTemplate.bind({});
-LeftSlot.args = {
+export const WithSlots = Template.bind({});
+WithSlots.args = {
   color: 'primary',
   rounded: false,
   sharp: false,
-};
-
-const RightTemplate: StoryFn<typeof AdtButton> = (args) => ({
-  components: { AdtButton },
-  setup() {
-    return { args };
-  },
-  template:
-    '<AdtButton v-bind="args">Click me!<template #right><div>I am right!</div></template></AdtButton>',
-});
-
-export const RightSlot = RightTemplate.bind({});
-RightSlot.args = {
-  color: 'primary',
-  rounded: false,
-  sharp: false,
-};
-
-const BothTemplate: StoryFn<typeof AdtButton> = (args) => ({
-  components: { AdtButton },
-  setup() {
-    return { args };
-  },
-  template:
-    '<AdtButton v-bind="args"><template #left><div>I am left!</div></template>Click me!<template #right><div>I am right!</div></template></AdtButton>',
-});
-
-export const BothSlots = BothTemplate.bind({});
-BothSlots.args = {
-  color: 'primary',
-  rounded: false,
-  sharp: false,
+  leftContent: '<p>Left!</p>',
+  rightContent: '<p>Right!</p>',
 };
