@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "create:component": "node ./scripts/components/create-component.js",
+    "create:component": "node ./scripts/components/create-component.mjs",
     "test": "vitest run --coverage --dom",
     "test:watch": "vitest --coverage --dom",
     "lint": "eslint src --ext .ts,.vue"
