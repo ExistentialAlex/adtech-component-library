@@ -1,8 +1,8 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
-import { toKebabCase, toPascalCase } from '../helpers/cases.js';
+import { toKebabCase, toPascalCase } from '../helpers/cases.mjs';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { regexLastIndexOf } from '../helpers/indexOf.js';
+import { regexLastIndexOf } from '../helpers/indexOf.mjs';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const componentIndexPath = `${__dirname}/../../src/components/index.ts`;
