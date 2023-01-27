@@ -1,12 +1,13 @@
 import type { App } from 'vue';
 import './style.scss';
-import { AdtButton, HelloWorld } from './components';
+import { AdtTextField, AdtButton, HelloWorld } from './components';
 
 export default {
   install: (app: App) => {
+    app.component('AdtTextField', AdtTextField);
     app.component('AdtButton', AdtButton);
     app.component('HelloWorld', HelloWorld);
   },
 };
 
-export { AdtButton, HelloWorld };
+export { AdtTextField, AdtButton, HelloWorld };
