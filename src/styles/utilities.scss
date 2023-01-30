@@ -25,6 +25,23 @@
         }
       }
     }
+
+    &-border {
+      border-color: map-get($color, 'base') !important;
+
+      &-hover {
+        &:hover {
+          border-color: map-get($color, 'hover') !important;
+        }
+      }
+
+      &-form {
+        &:focus-within {
+          background-color: var(--base-01);
+          border-color: map-get($color, 'base') !important;
+        }
+      }
+    }
   }
 }
 
@@ -59,6 +76,29 @@
         }
       }
     }
+
+    &-border {
+      border-color: map-get($color, 'fill') !important;
+
+      &-hover {
+        &:hover {
+          border-color: map-get($color, 'fill-hover') !important;
+        }
+      }
+
+      &-form {
+        border-color: var(--secondary) !important;
+
+        &:hover {
+          border-color: var(--secondary-hover) !important;
+        }
+
+        &:focus-within {
+          background-color: var(--base-01);
+          border-color: map-get($color, 'fill') !important;
+        }
+      }
+    }
   }
 }
 
@@ -75,6 +115,29 @@
       &-hover {
         &:hover {
           background-color: map-get($color, 'hover');
+        }
+      }
+    }
+
+    &-border {
+      border-color: map-get($color, 'base');
+
+      &-hover {
+        &:hover {
+          border-color: map-get($color, 'hover');
+        }
+      }
+
+      &-form {
+        border-color: var(--secondary) !important;
+
+        &:hover {
+          border-color: var(--secondary-hover) !important;
+        }
+
+        &:focus-within {
+          background-color: var(--base-01);
+          border-color: map-get($color, 'base') !important;
         }
       }
     }
