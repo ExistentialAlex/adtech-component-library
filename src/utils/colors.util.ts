@@ -86,6 +86,7 @@ export const getColorFormOutlineClasses = (
 
   switch (clr) {
     case AdTechComponentColors.primary:
+    case AdTechComponentColors.secondary:
     case AdTechComponentColors.accent:
     case AdTechNumericColors.positive:
     case AdTechNumericColors.negative:
@@ -95,10 +96,6 @@ export const getColorFormOutlineClasses = (
     case AdTechStatusColors.info:
     case AdTechStatusColors.neutral: {
       classes.push(`${clr}-border-form`);
-      break;
-    }
-    case AdTechComponentColors.secondary: {
-      classes.push('primary-border-form');
       break;
     }
   }
