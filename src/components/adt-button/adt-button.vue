@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { AppearanceProps } from '../../interfaces';
-import { getBrClasses, getColorBgClasses } from '../../utils';
+import { getBrClasses, getColorFillClasses } from '../../utils';
 
 // Would like to use this to define props, but have to wait till vue 3.3
 // eslint-disable-next-line @typescript-eslint/no-empty-interface, @typescript-eslint/no-unused-vars
@@ -15,7 +15,7 @@ const props = defineProps({
 const buttonClasses = computed(() =>
   [
     'adt-btn',
-    ...getColorBgClasses(props.color as AppearanceProps['color'], true),
+    ...getColorFillClasses(props.color as AppearanceProps['color'], true),
     ...getBrClasses({ rounded: props.rounded, sharp: props.sharp }),
   ].join(' ')
 );

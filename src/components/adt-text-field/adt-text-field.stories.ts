@@ -1,7 +1,7 @@
 import AdtTextField from './adt-text-field.vue';
 import type { Meta, StoryFn } from '@storybook/vue3';
 import { AppearanceProps } from '../../interfaces';
-import { AdTechComponentColors } from '../../enums';
+import { getAllColorsAsArray } from '../../utils';
 
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
@@ -15,7 +15,7 @@ export default {
       },
       control: {
         type: 'select',
-        options: [...Object.values(AdTechComponentColors)],
+        options: [...getAllColorsAsArray()],
       },
     },
   },
@@ -39,6 +39,7 @@ Default.args = {
   modelValue: '',
   rounded: false,
   sharp: false,
+  placeholder: ''
 };
 
 export const WithSlots = Template.bind({});
@@ -46,6 +47,7 @@ WithSlots.args = {
   modelValue: '',
   rounded: false,
   sharp: false,
+  placeholder: '',
   leftContent: '<p>Left!</p>',
   rightContent: '<p>Right!</p>',
 };
