@@ -12,7 +12,7 @@ export const getAllColorsAsArray = () => {
   ];
 };
 
-export const getColorBgClasses = (
+export const getColorFillClasses = (
   color?: AdTechComponentColors | AdTechNumericColors | AdTechStatusColors,
   hover?: boolean
 ): string[] => {
@@ -40,6 +40,65 @@ export const getColorBgClasses = (
       if (hover) {
         classes.push(`${btnClr}-fill-hover`);
       }
+      break;
+    }
+  }
+
+  return classes;
+};
+
+export const getColorOutlineClasses = (
+  color?: AdTechComponentColors | AdTechNumericColors | AdTechStatusColors,
+  hover?: boolean
+): string[] => {
+  const classes: string[] = [];
+
+  const clr = color || AdTechComponentColors.primary;
+
+  switch (clr) {
+    case AdTechComponentColors.primary:
+    case AdTechComponentColors.secondary:
+    case AdTechComponentColors.accent:
+    case AdTechNumericColors.positive:
+    case AdTechNumericColors.negative:
+    case AdTechStatusColors.error:
+    case AdTechStatusColors.success:
+    case AdTechStatusColors.warning:
+    case AdTechStatusColors.info:
+    case AdTechStatusColors.neutral: {
+      classes.push(`${clr}-border`);
+      if (hover) {
+        classes.push(`${clr}-border-hover`);
+      }
+      break;
+    }
+  }
+
+  return classes;
+};
+
+export const getColorFormOutlineClasses = (
+  color?: AdTechComponentColors | AdTechNumericColors | AdTechStatusColors
+): string[] => {
+  const classes: string[] = [];
+
+  const clr = color || AdTechComponentColors.primary;
+
+  switch (clr) {
+    case AdTechComponentColors.primary:
+    case AdTechComponentColors.accent:
+    case AdTechNumericColors.positive:
+    case AdTechNumericColors.negative:
+    case AdTechStatusColors.error:
+    case AdTechStatusColors.success:
+    case AdTechStatusColors.warning:
+    case AdTechStatusColors.info:
+    case AdTechStatusColors.neutral: {
+      classes.push(`${clr}-border-form`);
+      break;
+    }
+    case AdTechComponentColors.secondary: {
+      classes.push('primary-border-form');
       break;
     }
   }
