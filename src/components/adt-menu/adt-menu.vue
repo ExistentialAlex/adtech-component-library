@@ -15,9 +15,11 @@ const props = defineProps({
   modelValue: {
     required: false,
     default: null,
+    type: Object,
   },
   stringify: {
     required: false,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     default(s: any) {
       return s.toString();
     },
