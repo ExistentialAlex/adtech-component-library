@@ -15,7 +15,6 @@ const props = defineProps({
   modelValue: {
     required: false,
     default: null,
-    type: Object,
   },
   stringify: {
     required: false,
@@ -29,33 +28,24 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue']);
 
-const classes = [
+const classes = computed(() => [
   'adt-menu',
   'br-default',
   ...getBrClasses({ rounded: props.rounded, sharp: props.sharp }),
   ...getColorOutlineClasses(props.color as AppearanceProps['color'], true),
-];
+]);
 
 const active: Ref<null | unknown> = ref(props.modelValue);
-
-const value: WritableComputedRef<unknown> = computed({
-  get() {
-    return props.modelValue;
-  },
-  set(value) {
-    emit('update:modelValue', value);
-  },
-});
 
 const itemClick = (item: unknown) => {
   if (props.stringify(active.value || '') === props.stringify(item)) {
     active.value = null;
-    value.value = null;
+    emit('update:modelValue', null);
     return;
   }
 
-  value.value = item;
   active.value = item;
+  emit('update:modelValue', item);
 };
 </script>
 
