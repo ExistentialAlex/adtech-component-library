@@ -27,7 +27,7 @@ export default {
   args: {
     rounded: false,
     sharp: false,
-    color: 'secondary'
+    color: 'secondary',
   },
 } as Meta<typeof AdtMenu>;
 
@@ -100,5 +100,33 @@ CustomStringifyWithSelection.args = {
     id: 1,
     text: 'my item',
   },
+  stringify: (item: myItem) => item.text,
+};
+
+const CustomTemplate: StoryFn<typeof AdtMenu> = (args) => ({
+  components: { AdtMenu },
+  setup() {
+    return { args };
+  },
+  template:
+    '<AdtMenu v-bind="args"><template #item="{ item }"><h1>{{ item.text }}</h1></template></AdtMenu>',
+});
+export const CustomItemTemplate = CustomTemplate.bind({});
+CustomItemTemplate.args = {
+  items: [
+    {
+      id: 1,
+      text: 'my item',
+    },
+    {
+      id: 2,
+      text: 'my other item',
+    },
+    {
+      id: 3,
+      text: 'my third item',
+    },
+  ],
+  modelValue: null,
   stringify: (item: myItem) => item.text,
 };

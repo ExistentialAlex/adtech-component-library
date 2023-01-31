@@ -70,7 +70,9 @@ const itemClick = (item: unknown) => {
         :class="{ 'adt-menu-item__active': stringify(active || '') === stringify(item) }"
         @click="itemClick(item)"
       >
-        {{ stringify(item) }}
+        <slot name="item" :item="item" :active="active">
+          {{ stringify(item) }}
+        </slot>
       </li>
     </template>
   </ul>
