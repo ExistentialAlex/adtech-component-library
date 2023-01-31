@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { placeholder } from '@babel/types';
 import { computed, ref } from 'vue';
 import { AppearanceProps } from '../../interfaces';
 import { getBrClasses, getColorFormOutlineClasses } from '../../utils';
@@ -47,7 +46,7 @@ const focusInput = () => {
 </script>
 
 <template>
-  <div :class="classes" @click="focusInput">
+  <div :class="classes" @click="focusInput()">
     <slot name="left"></slot>
     <input ref="input" type="text" v-model="value" :placeholder="placeholder" />
     <slot name="right"></slot>
